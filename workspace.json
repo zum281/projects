@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "geeno": "apps/geeno",
-    "geeno-e2e": "apps/geeno-e2e"
+    "geeno-e2e": "apps/geeno-e2e",
+    "shared-components": "libs/shared-components",
+    "speedtype": "apps/speedtype",
+    "speedtype-e2e": "apps/speedtype-e2e"
   }
 }
