@@ -4,6 +4,7 @@
     "geeno": "apps/geeno",
     "geeno-e2e": "apps/geeno-e2e",
     "shared-components": "libs/shared-components",
+    "shared-components-e2e": "apps/shared-components-e2e",
     "speedtype": "apps/speedtype",
     "speedtype-e2e": "apps/speedtype-e2e"
   }
