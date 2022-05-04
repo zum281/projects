@@ -2,6 +2,6 @@ export * from './lib/layout';
 
 export type Link = {
   name: string;
-  path: string;
+  href: string;
   external?: boolean;
 };

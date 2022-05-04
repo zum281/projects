@@ -24,7 +24,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ pages }) => {
       >
         <nav>
           {pages.map((page, index) => (
-            <NextLink key={index} href={page.path} passHref>
+            <NextLink key={index} href={page.href} passHref>
               <Link isExternal={page.external}>{page.name}</Link>
             </NextLink>
           ))}

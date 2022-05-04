@@ -4,6 +4,6 @@ import { Link } from '../..';
 export type LayoutProps = {
   title: string;
   description: string;
-  pages: Link[];
+  pages?: Link[];
   children: ReactNode;
 };
