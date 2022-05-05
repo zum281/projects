@@ -1,17 +1,14 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import Layout from '../../../libs/shared-components/src/lib/layout/layout';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to geeno!</title>
-      </Head>
-      <main className="app">
+    <ChakraProvider>
+      <Layout title="Geeno" description="BMI calculator">
         <Component {...pageProps} />
-      </main>
-    </>
+      </Layout>
+    </ChakraProvider>
   );
 }
 
