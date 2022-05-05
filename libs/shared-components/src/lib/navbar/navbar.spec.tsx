@@ -20,7 +20,7 @@ const pages: Link[] = [
 
 describe('SharedComponents', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Navbar pages={pages} />);
+    const { baseElement } = render(<Navbar title="test" pages={pages} />);
     expect(baseElement).toBeTruthy();
   });
 });

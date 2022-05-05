@@ -25,7 +25,7 @@ export default {
 
 const Template: Story = () => (
   <ChakraProvider>
-    <Navbar pages={pages} />
+    <Navbar title="Test" pages={pages} />
   </ChakraProvider>
 );
 

@@ -10,7 +10,8 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { NavbarProps } from './navbar.types';
-const Navbar: FunctionComponent<NavbarProps> = ({ pages }) => {
+import { Nav } from './navbar.style';
+const Navbar: FunctionComponent<NavbarProps> = ({ title, pages }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -22,16 +23,20 @@ const Navbar: FunctionComponent<NavbarProps> = ({ pages }) => {
         px="1rem"
         py={4}
       >
-        <nav>
+        <NextLink href="/" passHref>
+          <Link>{title}</Link>
+        </NextLink>
+
+        <Nav>
           {pages.map((page, index) => (
             <NextLink key={index} href={page.href} passHref>
               <Link isExternal={page.external}>{page.name}</Link>
             </NextLink>
           ))}
-        </nav>
-        <Button onClick={toggleColorMode}>
-          {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-        </Button>
+          <Button onClick={toggleColorMode}>
+            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+          </Button>
+        </Nav>
       </Flex>
     </Box>
   );
