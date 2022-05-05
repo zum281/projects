@@ -10,7 +10,7 @@ export const getNetWpm = (
   typedChars: number,
   errors: number
 ) => {
-  return Math.floor(getGrossWpm(minutes, typedChars) - errors / minutes);
+  return Math.floor((getGrossWpm(minutes, typedChars) - errors) / minutes);
 };
 
 export const getAccuracy = (errors: number, typedChars: number) => {
