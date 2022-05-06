@@ -1,5 +1,3 @@
-export * from './lib/layout';
-
 export type Link = {
   name: string;
   href: string;
