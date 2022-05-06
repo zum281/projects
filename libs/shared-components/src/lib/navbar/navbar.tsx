@@ -4,13 +4,13 @@ import {
   Box,
   Button,
   Flex,
+  HStack,
   Link,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { NavbarProps } from './navbar.types';
-import { Nav } from './navbar.style';
 const Navbar: FunctionComponent<NavbarProps> = ({ title, pages }) => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -27,7 +27,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ title, pages }) => {
           <Link>{title}</Link>
         </NextLink>
 
-        <Nav>
+        <HStack as="nav" spacing={4}>
           {pages.map((page, index) => (
             <NextLink key={index} href={page.href} passHref>
               <Link isExternal={page.external}>{page.name}</Link>
@@ -36,7 +36,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ title, pages }) => {
           <Button onClick={toggleColorMode}>
             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
           </Button>
-        </Nav>
+        </HStack>
       </Flex>
     </Box>
   );
