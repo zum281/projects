@@ -1,2 +1,2 @@
 export * from './layout';
-export { LayoutProps } from './layout.types';
+export { LayoutProps as default } from './layout.types';
