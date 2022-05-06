@@ -14,7 +14,7 @@ export type GameContextContent = {
   timer: number;
   setTimer: (timer: number) => void;
   seconds: number;
-
+  resetGame: () => void;
   errors: number;
   addError: () => void;
   removeError: () => void;
@@ -28,4 +28,5 @@ export type GameContextContent = {
   increaseIndex: () => void;
   decreaseIndex: () => void;
   resetIndex: () => void;
+  gameOver: boolean;
 };

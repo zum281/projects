@@ -16,7 +16,6 @@ export const Index: NextPage = () => {
           Play!
         </Button>
       )}
-      <Results />
     </>
   );
 };

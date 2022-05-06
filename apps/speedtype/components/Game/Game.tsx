@@ -8,8 +8,10 @@ import { DisplayBox } from '../DisplayBox';
 import { InputBox } from '../InputBox';
 import { useGameContext } from '../../context/GameContext';
 import { Container, VStack } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
 const Game: FC = () => {
+  const router = useRouter();
   const {
     playing,
     stopGame,
@@ -20,6 +22,7 @@ const Game: FC = () => {
     currentIndex,
     increaseIndex,
     initialChars,
+    gameOver,
   } = useGameContext();
 
   const [userInput, setUserInput] = useState('');
@@ -47,9 +50,10 @@ const Game: FC = () => {
   };
 
   useEffect(() => {
-    if (initialChars.length > 0 && currentIndex === initialChars.length) {
+    if (gameOver) {
       stopGame();
       setUserInput('');
+      router.push('/results');
     }
   }, [currentIndex, stopGame]);
 

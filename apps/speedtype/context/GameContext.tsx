@@ -21,6 +21,8 @@ const initialValue = {
   increaseIndex: () => {},
   decreaseIndex: () => {},
   resetIndex: () => {},
+  gameOver: false,
+  resetGame: () => {},
 };
 
 export const GameContext = createContext<GameContextContent>(initialValue);

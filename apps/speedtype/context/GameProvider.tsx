@@ -3,8 +3,10 @@ import { GameContext } from './GameContext';
 import { CharColor } from '../types/enums';
 import { useInitialText } from '../hooks/useInitialText';
 import { charObj } from '../types';
+import { useColorMode } from '@chakra-ui/react';
 
 export const GameProvider = ({ children }: { children: React.ReactNode }) => {
+  const { colorMode } = useColorMode();
   const [refresh, setRefresh] = useState(false);
   const { initialChars } = useInitialText(refresh, setRefresh);
   const [playing, setPlaying] = useState(false);
@@ -13,17 +15,25 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
   const [chars, setChars] = useState<charObj[]>([]);
   const [errors, setErros] = useState(0);
   const seconds = useMemo(() => timer / 10, [timer]);
+  const gameOver = useMemo(
+    () => initialChars.length > 0 && currentIndex === initialChars.length,
+    [initialChars, currentIndex]
+  );
 
-  useEffect(() => {
-    console.log(initialChars, playing);
-    setChars([...initialChars]);
-  }, [initialChars, playing]);
+  useEffect(() => setChars([...initialChars]), [initialChars, playing]);
 
   const startGame = () => {
     setTimer(0);
     setCurrentIndex(0);
     setRefresh(true);
     setPlaying(true);
+  };
+
+  const resetGame = () => {
+    setTimer(0);
+    setCurrentIndex(0);
+    setRefresh(true);
+    setPlaying(false);
   };
 
   const stopGame = () => setPlaying(false);
@@ -37,7 +47,7 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
 
     const newChars = chars.map((char) => {
       if (char.index === currentIndex - 1) {
-        char.color = CharColor.BLACK;
+        char.color = colorMode === 'light' ? CharColor.BLACK : CharColor.WHITE;
       }
       return char;
     });
@@ -99,6 +109,8 @@ export const GameProvider = ({ children }: { children: React.ReactNode }) => {
     addError,
     removeError,
     seconds,
+    gameOver,
+    resetGame,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

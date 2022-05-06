@@ -10,7 +10,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <GameProvider>
         <GlobalStyles />
-        <Layout title="Speedtype" description="Speedtyping game">
+        <Layout
+          title="Speedtype"
+          description="Speedtyping game"
+          pages={[{ name: 'New Game', href: '/' }]}
+        >
           <Component {...pageProps} />
         </Layout>
       </GameProvider>
