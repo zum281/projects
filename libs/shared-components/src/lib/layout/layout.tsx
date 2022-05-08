@@ -15,7 +15,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
         <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
-      {pages && <Navbar pages={pages} />}
+      {pages && <Navbar title={title} pages={pages} />}
       <VStack spacing={8} py={12}>
         {children}
       </VStack>
