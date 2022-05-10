@@ -1,17 +1,16 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
+import Layout from '../../../libs/shared-components/src/lib/layout/layout';
+import { GlobalCSS, theme } from '../styles';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Welcome to do-it!</title>
-      </Head>
-      <main className="app">
+    <ChakraProvider theme={theme}>
+      <GlobalCSS />
+      <Layout title="doIt" description="Todo list">
         <Component {...pageProps} />
-      </main>
-    </>
+      </Layout>
+    </ChakraProvider>
   );
 }
 
