@@ -1,0 +1,27 @@
+{
+  "sourceRoot": "apps/do-it-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/do-it-e2e/cypress.json",
+        "devServerTarget": "do-it:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "do-it:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/do-it-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["do-it"]
+}

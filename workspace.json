@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "do-it": "apps/do-it",
+    "do-it-e2e": "apps/do-it-e2e",
     "geeno": "apps/geeno",
     "geeno-e2e": "apps/geeno-e2e",
     "shared-components": "libs/shared-components",
