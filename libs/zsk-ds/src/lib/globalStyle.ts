@@ -22,8 +22,8 @@ const global = {
     'box-sizing': 'border-box',
   },
   body: {
-    background: 'var(--theme-color-background)',
-    color: 'var(--theme-color-text)',
+    background: 'var(--theme-color-text)',
+    color: 'var(--theme-color-background)',
     'font-family': 'var(--font-sans-serif)',
     'font-size': 'var(--font-size-md)',
     'font-weight': 'var(--font-weight-normal)',

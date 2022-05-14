@@ -1,17 +1,14 @@
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 import { GlobalCSS } from '@zusk/zsk-ds';
+import { Layout } from '../components/layout';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>Welcome to wordle-clone!</title>
-      </Head>
       <GlobalCSS />
-      <main>
+      <Layout>
         <Component {...pageProps} />
-      </main>
+      </Layout>
     </>
   );
 }
