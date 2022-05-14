@@ -5,6 +5,8 @@
     "shared-components-e2e": "apps/shared-components-e2e",
     "speedtype": "apps/speedtype",
     "speedtype-e2e": "apps/speedtype-e2e",
+    "wordle-clone": "apps/wordle-clone",
+    "wordle-clone-e2e": "apps/wordle-clone-e2e",
     "zsk-ds": "libs/zsk-ds"
   }
 }

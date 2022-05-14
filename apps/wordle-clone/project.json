@@ -1,0 +1,59 @@
+{
+  "sourceRoot": "apps/wordle-clone",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/wordle-clone",
+        "outputPath": "dist/apps/wordle-clone"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "wordle-clone:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "wordle-clone:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "wordle-clone:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "wordle-clone:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/wordle-clone"],
+      "options": {
+        "jestConfig": "apps/wordle-clone/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/wordle-clone/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

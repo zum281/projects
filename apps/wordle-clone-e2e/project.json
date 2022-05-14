@@ -1,0 +1,27 @@
+{
+  "sourceRoot": "apps/wordle-clone-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/wordle-clone-e2e/cypress.json",
+        "devServerTarget": "wordle-clone:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "wordle-clone:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/wordle-clone-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["wordle-clone"]
+}

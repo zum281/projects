@@ -2,7 +2,7 @@ export const font = {
   family: {
     '--font-fallback':
       "-apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-    '--font-serif': 'Georgia, serif',
+    '--font-serif': 'Bitter, serif',
     '--font-sans-serif': 'Roboto, var(--font-fallback)',
     '--font-monospace': "'Fira Code', monospace",
   },

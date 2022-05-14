@@ -21,6 +21,14 @@ const global = {
     padding: '0',
     'box-sizing': 'border-box',
   },
+  body: {
+    background: 'var(--theme-color-background)',
+    color: 'var(--theme-color-text)',
+    'font-family': 'var(--font-sans-serif)',
+    'font-size': 'var(--font-size-md)',
+    'font-weight': 'var(--font-weight-normal)',
+    'line-height': '1.6',
+  },
 };
 
 export const GlobalCSS = createGlobalStyle({
@@ -34,7 +42,7 @@ export const GlobalCSS = createGlobalStyle({
     ...font.family,
     ...font.size,
     ...font.weight,
+    ...theme,
   },
   ...global,
-  ...theme,
 });
