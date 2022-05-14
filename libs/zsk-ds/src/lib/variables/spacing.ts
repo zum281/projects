@@ -1,0 +1,18 @@
+export const spacing = {
+  '--space-0': '0',
+  '--space-1': '0.25rem',
+  '--space-2': '0.5rem',
+  '--space-3': '0.75rem',
+  '--space-4': '1rem',
+  '--space-5': '1.5rem',
+  '--space-6': '2rem',
+  '--space-7': '2.5rem',
+  '--space-8': '3rem',
+  '--space-9': '3.5rem',
+  '--space-10': '4rem',
+  '--space-11': '5rem',
+  '--space-12': '6rem',
+  '--space-13': '8rem',
+  '--space-14': '16rem',
+  '--space-15': '32rem',
+};

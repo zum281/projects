@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zusk/shared-components": ["libs/shared-components/src/index.ts"]
+      "@zusk/shared-components": ["libs/shared-components/src/index.ts"],
+      "@zusk/zsk-ds": ["libs/zsk-ds/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

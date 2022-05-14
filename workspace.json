@@ -4,6 +4,7 @@
     "shared-components": "libs/shared-components",
     "shared-components-e2e": "apps/shared-components-e2e",
     "speedtype": "apps/speedtype",
-    "speedtype-e2e": "apps/speedtype-e2e"
+    "speedtype-e2e": "apps/speedtype-e2e",
+    "zsk-ds": "libs/zsk-ds"
   }
 }

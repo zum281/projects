@@ -1,0 +1,42 @@
+{
+  "sourceRoot": "libs/zsk-ds/src",
+  "projectType": "library",
+  "tags": ["design-system"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/zsk-ds",
+        "tsConfig": "libs/zsk-ds/tsconfig.lib.json",
+        "project": "libs/zsk-ds/package.json",
+        "entryFile": "libs/zsk-ds/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/zsk-ds/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/zsk-ds/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/zsk-ds"],
+      "options": {
+        "jestConfig": "libs/zsk-ds/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
